@@ -40,5 +40,6 @@ nest new nestjs-standalone-boilerplate
 npm i -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin 
 npm i -D prettier eslint-config-prettier eslint-plugin-prettier
 
+gibo dump JetBrains Node macOS Linux > .gitignore
 
 ```
