@@ -1,0 +1,24 @@
+{
+  "extends": ["config:base"],
+  "timezone": "Asia/Tokyo",
+  "schedule": ["before 7am on Saturday"],
+  "labels": ["renovate"],
+  "packageRules": [
+    {
+      "depTypeList": ["devDependencies"],
+      "updateTypes": ["patch", "minor"],
+      "groupName": "devDependencies (non-major)",
+      "automerge": true
+    },
+    {
+      "depTypeList": ["dependencies"],
+      "updateTypes": ["minor"],
+      "groupName": "dependencies (minor)"
+    },
+    {
+      "depTypeList": ["dependencies"],
+      "updateTypes": ["patch"],
+      "groupName": "dependencies (patch)"
+    }
+  ]
+}
