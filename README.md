@@ -1,5 +1,13 @@
 # NestJS standalone boilerplate
 
+## Dependencies
+
+- direnv
+- Node.js v12.16.1 with nodenv
+- npm
+- docker
+- docker-compose
+
 ## Installation
 
 ```bash
@@ -47,4 +55,5 @@ npm i -D npm-run-all cross-env
 
 npm i -D dependency-cruiser
 
+npm i @nestjs/config
 ```
