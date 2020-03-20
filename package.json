@@ -6,20 +6,22 @@
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
-    "precommit": "lint",
+    "precommit": "npm run lint",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "cross-env NODE_OPTIONS=\"${NODE_OPTIONS} --require=source-map-support/register\" nest start --watch",
     "start:debug": "cross-env NODE_OPTIONS=\"${NODE_OPTIONS} --require=source-map-support/register\" nest start --debug --watch",
     "start:prod": "node dist/main",
-    "lint": "npm-run-all --parallel --print-label tsc:check eslint prettier",
+    "lint": "npm-run-all --parallel --print-label tsc:check eslint prettier depcruise:validate",
     "lint:fix": "npm-run-all --parallel --print-label eslint:fix prettier:fix",
     "eslint": "eslint './{src,tests}/**/*.ts'",
     "eslint:fix": "eslint --fix './{src,test,tests}/**/*.ts'",
     "prettier": "prettier --config ./.prettierrc -c '{./*.json,./src/**/*.graphql}'",
     "prettier:fix": "yarn prettier --write",
     "tsc:check": "tsc --noEmit -p .",
+    "depcruise": "depcruise --config .dependency-cruiser.json --output-type dot src | dot -T svg > dependencygraph.svg",
+    "depcruise:validate": "depcruise --validate .dependency-cruiser.json src",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
@@ -78,7 +80,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "precommit"
+      "pre-commit": "npm run precommit"
     }
   }
 }
