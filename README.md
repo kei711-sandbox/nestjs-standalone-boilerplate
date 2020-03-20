@@ -4,6 +4,7 @@
 
 ```bash
 $ npm install
+$ cp .env.sample .env
 ```
 
 ## Running the app
@@ -41,5 +42,7 @@ npm i -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 npm i -D prettier eslint-config-prettier eslint-plugin-prettier
 
 gibo dump JetBrains Node macOS Linux > .gitignore
+
+npm i -D npm-run-all cross-env
 
 ```
